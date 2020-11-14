@@ -9,7 +9,7 @@
 			<a href="{{ route('categories.create')}}" class="btn btn-success">
 				Add Disease Name 
 			</a>
-			<marquee><h3>(**If disease type is not avilable in this list then add it**)</h3></marquee>
+			(**If it is not avilable in this list**)
 		</p>
 		@endif
 
@@ -23,7 +23,7 @@
 			<thead>
 				<tr>
 				
-				<th>Type</th>
+				<th>Category</th>
 				
 				<th>Status</th>
 				<th>Action</th>

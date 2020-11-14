@@ -59,7 +59,23 @@
 				</tr>
 			</thead>
 
-			
+			<tbody>
+
+				@foreach($category->posts as $post)
+				<tr>
+					<td>{{ $post->category->name }}</td>
+					<td>{{ $post->title }}</td>
+					<td>{{ $post->content }}</td>   
+					<td>{{ $post->user->name }}</td>
+					<td>{{ $post->status == 1 ? 'Active' : 'Inactive' }}</td>
+					<td>
+						<a href="{{ route('posts.show', $post->id)}}" class="btn btn-info">
+							<i>Details</i>
+						</a>
+					</td>
+				</tr>
+				@endforeach
+			</tbody>
 		</table> 
 
 

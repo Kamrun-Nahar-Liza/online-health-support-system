@@ -6,27 +6,28 @@ use Illuminate\Http\Request;
 
 use App\Category;
 use Validator;
+use Auth;
 
 class CategoryController extends Controller
 {
-    public function index(){
+   public function index(){
 
-    	 $data=[];
-		 $data['categories'] = Category::select('id','name','slug','status')->get();
+         $data=[];
+         $data['categories'] = Category::select('id','name','slug','status')->get();
 
-    	return view('category.index', $data);
+        return view('category.index', $data);
     }
 
     public function create(){
 
-    	 $data=[];
-		 return view('category.create', $data);
+         $data=[];
+         return view('category.create', $data);
     }
 
     public function store(Request $request){
-		//validation
+        //validation
 
-      	$rules= [
+        $rules= [
             'name' => 'required|unique:categories,name',
             'status' => 'required'
         ];
@@ -41,9 +42,9 @@ class CategoryController extends Controller
 
         Category::create([
 
-        	'name' => trim($request->input('name')),
-        	'slug' => str_slug(trim($request->input('name'))),
-        	'status' => $request->input('status')
+            'name' => trim($request->input('name')),
+            'slug' => str_slug(trim($request->input('name'))),
+            'status' => $request->input('status')
         ]);
 
         //redirect
@@ -56,34 +57,24 @@ class CategoryController extends Controller
 
     public function show($id){
 
-    	 $data=[];
- 		 $data['category'] = Category::select('id','name','slug','status','created_at')->find($id);
-    	return view('category.show', $data);
+         $data=[];
+         $data['category'] = Category::with('posts')->select('id','name','slug','status','created_at')->find($id);
+        return view('category.show', $data);
     }
 
     public function edit($id){
 
-    	 $data=[];
-         $data['site_title']='Testblog';
-         $data['current_time']= date('Y m d, H:i:s');
-
-         $data['links']=[
-        'Facebook'=> 'https://www.facebook.com/',
-        'Google'=> 'https://www.google.com/',
-        'Youtube'=> 'https://www.youtube.com/',
-        'Twitter'=> 'https://www.twitter.com/',
-        'LinkedIn'=> 'https://www.linkedin.com/'
-    ];
-
-    	$data['category'] = Category::select('id','name','slug','status','created_at')->find($id);
-    	return view('category.edit', $data);
+         $data=[];
+         
+        $data['category'] = Category::select('id','name','slug','status','created_at')->find($id);
+        return view('category.edit', $data);
     }
 
     public function update($id, Request $request){
 
-    	//validation
+        //validation
 
-      	$rules= [
+        $rules= [
             'name' => 'required|unique:categories,name,'.$id,
             'status' => 'required'
            
@@ -101,9 +92,9 @@ class CategoryController extends Controller
 
         $category->update([
 
-        	'name' => trim($request->input('name')),
-        	'slug' => str_slug(trim($request->input('name'))),
-        	'status' => $request->input('status')
+            'name' => trim($request->input('name')),
+            'slug' => str_slug(trim($request->input('name'))),
+            'status' => $request->input('status')
         ]);
 
         //redirect
@@ -116,15 +107,14 @@ class CategoryController extends Controller
 
     public function delete($id){
 
-    	$category = Category::find($id);
-    	$category->delete();
+        $category = Category::find($id);
+        $category->delete();
 
-    	//redirect
+        //redirect
 
         session()->flash('message','Disease name deleted');
         session()->flash('type','danger');
         return redirect()->route('categories.index');
 
     }
-
 }

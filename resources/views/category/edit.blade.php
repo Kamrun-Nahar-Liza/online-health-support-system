@@ -1,11 +1,11 @@
 @extends('master')
 
 @section('content')
-	<h2><b>Edit Disease Name</b></h2>
+  <h2><b>Edit Disease Name</b></h2>
 
-	<form action="{{ route('categories.update', $category->id) }}" method="post" enctype="multipart/form-data">
+  <form action="{{ route('categories.update', $category->id) }}" method="post" enctype="multipart/form-data">
 
-	{{ csrf_field() }}
+  {{ csrf_field() }}
   <input name="_method" type="hidden" value="PUT">
 
 
@@ -47,12 +47,12 @@
   </div>
   
   
-  <button type="submit" class="btn btn-success">Add Disease Name</button>
-	</form>
+  <button type="submit" class="btn btn-primary btn-block">Add Disease Name</button>
+  </form>
 
   <hr>
   <p>
-      <a href="{{ route('categories.index')}}" class="btn btn-primary">
+      <a href="{{ route('categories.index')}}" class="btn btn-primary btn-block">
         Back to Category
       </a>
     </p>

@@ -213,7 +213,7 @@
         
         <li><a href="{{ route('categories.index')}}"><i class="fa fa-link"></i> <span>Diseases List</span></a></li>
         
-        <li><a href="#"><i class="fa fa-link"></i> <span>Recovery Instructions</span></a></li>
+        <li><a href="{{ route('posts.index')}}"><i class="fa fa-link"></i> <span>Recovery Instructions</span></a></li>
         
        <!-- <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Sickness Type</span>
