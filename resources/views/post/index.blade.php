@@ -3,16 +3,17 @@
 @section('content')
 
 	<div class="weLl">
-		<h2>Post List</h2>
+		<h2><b>Recovery Instructions List</b></h2>
 		@if( Auth::user()->role == "doctor")
 		<p>
 			<a href="{{ route('posts.create')}}" class="btn btn-success">
 				<i class="fa fa-plus">  Add Recovery Instructions Post</i>
 			</a>
 		</p>
+		<marquee>Add recovery instruction post for patient.</marquee>
 		@endif
 
-		<marquee>Add recovery instruction post for patient.</marquee>
+		
 
 
 
@@ -21,12 +22,12 @@
    				 {{ session('message')}}
  			</div>
 		@endif
-		
+		<div>
 		<table class="table table-bordered table-condensed">
 			<thead class="thead-dark">
 				<tr >
 				
-				<th >Category</th>
+				<th>Disease Category</th>
 				<th>Syntomps of disease</th>
 				<th>Recovery Instruction</th>
 				<th>Recommand by</th>
@@ -57,6 +58,6 @@
 			</tbody>
 		</table>
 
-
+	</div>
 	</div>
 @stop

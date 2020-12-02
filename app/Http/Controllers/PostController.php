@@ -8,7 +8,7 @@ use App\Category;
 use Validator;
 use Auth;
 use App\User;
-
+use App\Comment;
 use DB;
 
 class PostController extends Controller
@@ -77,7 +77,14 @@ class PostController extends Controller
        // $data['categories'] = Category::select('name','id')->find($id);
 
 
-        return view('post.show', $data);
+        $comments = DB::table('users')
+            ->join('comments', 'users.id', '=', 'comments.user_id')
+            ->join('posts' ,'comments.post_id' ,'=', 'posts.id')
+            ->select('users.name', 'comments.*')
+            ->where(['posts.id' => $id])
+            ->get();
+
+        return view('post.show',['comments' => $comments], $data);
     }
 
     
@@ -138,5 +145,38 @@ class PostController extends Controller
         session()->flash('message','Post deleted');
         session()->flash('type','danger');
         return redirect()->route('posts.index');
+    }
+
+    //search option code
+
+    public function search(Request $request){
+                 
+      $user_id = Auth::user()->id;
+      
+      $keyword = $request->input('search');
+      $posts = Post::where('title', 'LIKE' , '%'.$keyword.'%')->get();
+      return view('search.searchposts' , ['posts' => $posts]);
+    }
+
+    public function searchboard()
+    {
+         $data=[];
+
+        return view('search.searchboard' , $data);
+    }
+
+    //comment code
+
+    public function comment(Request $request, $post_id){
+      $this->validate($request, [
+      'comment' => 'required'
+        ]);
+      $comment = new Comment;
+      $comment->user_id = Auth::user()->id;
+      $comment->post_id = $post_id;
+      $comment->comment = $request->input('comment');
+      $comment->save();
+      //return redirect("/view/{$post_id}")->with('response', 'Comment added successfully');
+      return redirect()->back()->with('response', 'Comment added successfully');
     }
 }

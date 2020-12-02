@@ -50,7 +50,7 @@
 			<thead>
 				<tr>
 				
-				<th>Category</th>
+				<th>Disease Category</th>
 				<th>Synptoms</th>
 				<th>Recovery Instructions</th>
 				<th>Author</th>

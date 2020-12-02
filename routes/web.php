@@ -33,3 +33,10 @@ Route::delete('/categories/{id}', 'CategoryController@delete')->name('categories
 
 //post
 Route::resource('/posts','PostController');
+
+//search
+Route::post('/search', 'PostController@search')->name('search');
+Route::get('/searchboard', 'PostController@searchboard')->name('searchboard');
+
+//comment
+Route::post('/comment/{id}', 'PostController@comment')->name('comment');

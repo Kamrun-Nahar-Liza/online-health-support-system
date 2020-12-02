@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Online Health Prediction System</title>
+    <title>Online Health Support System</title>
     <style type="text/css">
     	.bc{
     		background-color: #9cb9c7;
@@ -39,7 +39,7 @@
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
     			<div class="col-lg-2 pr-4 align-items-center">
-		    		<a class="navbar-brand" href="index.html"><h2><b>Online<span>Health</span>Prediction<span>System</span></h2></b></a>
+		    		<a class="navbar-brand" href="index.html"><h2><b>Online<span>Health</span>Support<span>System</span></h2></b></a>
 	    		</div>
 	    		</div>
 	    		<div class="col-lg-10 d-none d-md-block">

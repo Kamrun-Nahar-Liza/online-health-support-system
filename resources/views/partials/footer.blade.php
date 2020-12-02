@@ -4,5 +4,5 @@
      
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2020 <a href="#">Online Health Prediction System</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2020 <a href="#">Online Health Support System</a>.</strong> All rights reserved.
   </footer>

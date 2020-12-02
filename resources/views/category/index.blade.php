@@ -3,7 +3,7 @@
 @section('content')
 
 	<div class="weLl">
-		<h2>Name Of Disease List</h2>
+		<h2><b>Name Of Disease List</b></h2>
 		@if( Auth::user()->role == "doctor")
 		<p>
 			<a href="{{ route('categories.create')}}" class="btn btn-success">
@@ -23,7 +23,7 @@
 			<thead>
 				<tr>
 				
-				<th>Category</th>
+				<th>Disease Category</th>
 				
 				<th>Status</th>
 				<th>Action</th>

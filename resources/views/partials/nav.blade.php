@@ -5,7 +5,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
      <!-- <span class="logo-mini"><b>A</b>LT</span>-->
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b><h5>Online<span class="tc">Health</span>Prediction<span class="tc">System</span></h5><b></span>
+      <span class="logo-lg"><b><h5>Online<span class="tc">Health</span>Support<span class="tc">System</span></h5><b></span>
     </a>
 
     <!-- Header Navbar -->
@@ -208,7 +208,7 @@
         <!-- Optionally, you can add icons to the links -->
         
        <li><a href="#"><i class="fa fa-link"></i> <span>Dashboad</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Search your Disease</span></a></li>
+        <li><a href="{{ route('searchboard')}}"><i class="fa fa-link"></i> <span>Search your Disease</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Doctor List</span></a></li>
         
         <li><a href="{{ route('categories.index')}}"><i class="fa fa-link"></i> <span>Diseases List</span></a></li>

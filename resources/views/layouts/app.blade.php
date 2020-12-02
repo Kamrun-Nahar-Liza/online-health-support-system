@@ -38,7 +38,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <u><b>Online<span class="c">Health</span>Prediction<span class="c">System</span></b><u/>
+                        <u><b>Online<span class="c">Health</span>Support<span class="c">System</span></b><u/>
 
                     </a>
                 </div>
