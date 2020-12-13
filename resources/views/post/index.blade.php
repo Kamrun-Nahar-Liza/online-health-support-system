@@ -33,6 +33,10 @@
 				<th>Recommand by</th>
 				<th>Status</th>
 				<th>Action</th>
+				@if( Auth::user()->role == "admin")
+				<th>Action</th>
+				<th>Action</th>
+				@endif
 				</tr>
 			</thead>
 
@@ -51,6 +55,28 @@
 						<a href="{{ route('posts.show', $post->id)}}" class="btn btn-info">
 							<i class="fa fa-external-link-square">  Details</i>
 						</a>
+
+		@if( Auth::user()->role == "admin")
+						<td>
+		<div class="btn-group mr-2" role="group" aria-label="First group">
+    	<a href="{{ route('posts.edit' , $post->id) }}" class="btn btn-success"><i class="fa fa-pencil-square-o"> Edit </i></a>
+  		</div>
+  					</td>
+  					<td>
+  <div class="btn-group mr-2" role="group" aria-label="Second group">
+    <form action="{{ route('posts.destroy' , $post->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete?')">
+			
+			{{ csrf_field() }}
+            <input name="_method" type="hidden" value="DELETE">
+            <button type="submit" class="btn btn-danger ">
+            	<i class="fa fa-trash">  Delete </i>
+            </button>
+
+		</form>
+  </div>
+</td>
+@endif
+
 					</td>
 				</tr>
 				

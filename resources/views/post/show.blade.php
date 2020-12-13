@@ -45,7 +45,21 @@
                      @if(count($comments) > 0)
                             @foreach($comments as $comment)
                             <p><b> {{ $comment->name}} </b> : '{{ $comment->comment}}' &nbsp;&nbsp; Commented at: {{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }} </p>
-                            <p></p>
+                            
+                               @if($comment->user_id ==  Auth::user()->id)
+                            <p><div>
+    <form action="{{ route('comment.delete' , $comment->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete?')">
+      
+      {{ csrf_field() }}
+            <input name="_method" type="hidden" value="DELETE">
+            <button type="submit" class="btn btn-danger ">
+              Delete Comment
+            </button>
+
+    </form>
+  </div></p>
+  @endif
+                            
                             @endforeach
                     @else
                             <p>No Comments Avilable!</p>
@@ -74,7 +88,7 @@
 		</form>
 	</div> -->
 
-   @if($post->user_id ==  Auth::user()->id)
+   @if( Auth::user()->id == $post->user_id)
 
 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
   <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -94,8 +108,6 @@
 </div>
 
   @endif
-
-
 
 	<hr>
 	<div>

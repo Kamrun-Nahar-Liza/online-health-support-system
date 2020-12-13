@@ -83,4 +83,13 @@ class RegisterController extends Controller
             'role' => $data['role'],
         ]);
     }
+
+    public function destroy($id)
+    {
+        $users = User::find($id);
+        $users->delete();
+
+        //redirect
+        return redirect()->back();
+    }
 }

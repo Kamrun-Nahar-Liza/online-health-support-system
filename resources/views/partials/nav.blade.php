@@ -123,7 +123,7 @@
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-               <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+               <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"> -->
 
                 <p>
                   {{ Auth::user()->name }} logged in as {{ Auth::user()->role }}
@@ -149,7 +149,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <!-- <a href="#" class="btn btn-default btn-flat">Profile</a> -->
                 </div>
                 <div class="pull-right">
                   
@@ -181,7 +181,8 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"> -->
+          <p>.</p>
         </div>
         <div class="pull-left info">
           <p><b>{{ Auth::user()->name }}</b></p>
@@ -207,9 +208,18 @@
         <li class="header">Items</li>
         <!-- Optionally, you can add icons to the links -->
         
-       <li><a href="#"><i class="fa fa-link"></i> <span>Dashboad</span></a></li>
+       <li><a href="{{ route('dashboard')}}"><i class="fa fa-link"></i> <span>Dashboad</span></a></li>
+       @if( Auth::user()->role == "patient")
         <li><a href="{{ route('searchboard')}}"><i class="fa fa-link"></i> <span>Search your Disease</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Doctor List</span></a></li>
+        @endif
+        @if( Auth::user()->role == "doctor")
+        <li><a href="{{ route('activities')}}"><i class="fa fa-link"></i> <span>My Activities</span></a></li>
+        @endif
+        @if( Auth::user()->role == "admin")
+        <li><a href="{{ route('patientlist')}}"><i class="fa fa-link"></i> <span>User List</span></a></li>
+        @endif
+
+        <li><a href="{{ route('profile.index')}}"><i class="fa fa-link"></i> <span>Doctor List</span></a></li>
         
         <li><a href="{{ route('categories.index')}}"><i class="fa fa-link"></i> <span>Diseases List</span></a></li>
         

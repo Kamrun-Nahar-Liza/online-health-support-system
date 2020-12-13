@@ -40,3 +40,17 @@ Route::get('/searchboard', 'PostController@searchboard')->name('searchboard');
 
 //comment
 Route::post('/comment/{id}', 'PostController@comment')->name('comment');
+Route::delete('/comment/{id}', 'PostController@delete')->name('comment.delete');
+
+//dashboard
+Route::get('/dashboard', 'HomeController@dashboardindex')->name('dashboard');
+Route::get('/activities', 'HomeController@dashboardactivities')->name('activities');
+Route::get('/patientlist', 'HomeController@patientdetail')->name('patientlist');
+
+
+//profile
+
+Route::resource('/profile','ProfileController');
+
+//delete account
+Route::get('/user/destroy/{id}', 'RegisterController@destroy')->name('delete.account');

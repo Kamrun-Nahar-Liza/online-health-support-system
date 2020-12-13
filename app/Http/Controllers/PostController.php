@@ -179,4 +179,13 @@ class PostController extends Controller
       //return redirect("/view/{$post_id}")->with('response', 'Comment added successfully');
       return redirect()->back()->with('response', 'Comment added successfully');
     }
+
+    public function delete($id)
+    {
+        $comment = Comment::find($id);
+        $comment->delete();
+
+        //redirect
+       return redirect()->back()->with('response', 'Comment added successfully');
+    }
 }

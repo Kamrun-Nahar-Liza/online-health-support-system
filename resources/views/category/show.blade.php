@@ -13,14 +13,20 @@
 	</p>
 
 	<p>
-		Created At: {{ $category->created_at }}
+		Created At: {{ $category->created_at->diffforHumans() }}
 	</p>
 
 	<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+	@if( Auth::user()->role == "doctor")	
 	<div class="btn-group mr-2" role="group" aria-label="First group">
 		<a href="{{ route('categories.edit' , $category->id) }}" class="btn btn-success"> Edit </a>
 	</div>
+	@endif
 
+	@if( Auth::user()->role == "admin")	
+	<div class="btn-group mr-2" role="group" aria-label="First group">
+		<a href="{{ route('categories.edit' , $category->id) }}" class="btn btn-success"> Edit </a>
+	</div>
 
 	<div class="btn-group mr-2" role="group" aria-label="Second group">
 		<form action="{{ route('categories.delete' , $category->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete?')">
@@ -33,7 +39,9 @@
 
 		</form>
 	</div>
+	@endif
 </div>
+
 
 	<hr>
 	<div>

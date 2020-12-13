@@ -74,9 +74,9 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item active"><a href="index.html" class="nav-link pl-0">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link">About</a></li>
 	        	<li class="nav-item"><a href="#" class="nav-link">Doctor</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">Departments</a></li>
+	        	
 	        	
 	          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
 	        </ul>
@@ -325,14 +325,14 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-5">
-              <h2 class="ftco-heading-2 logo">Online<span>Health</span>Prediction<span>System</span></h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <h2 class="ftco-heading-2 logo">Online<span>Health</span>Support<span>System</span></h2>
+              <p>Online Health Support System will for giving recovery procedures suggestions or solution to patients for his according symptoms. He will also able to know the type of his sickness from his symptoms. Here will be some registered doctors who will have his own profile. They can add new sickness Type and also can post about the required treatment or medicines for that sickness.</p>
             </div>
             <div class="ftco-footer-widget mb-5">
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Its a Online site.</span></li>
 	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
 	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">health20.com</span></a></li>
 	              </ul>
@@ -352,7 +352,7 @@
                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Services</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
+                
                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
               </ul>
             </div>
@@ -363,7 +363,7 @@
                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Dentist</a></li>
                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Ophthalmology</a></li>
                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cardiology</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Surgery</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>So Many</a></li>
               </ul>
             </div>
           </div>
